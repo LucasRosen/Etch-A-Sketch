@@ -35,5 +35,5 @@ function removeGrid() {
 }
 
 
-const btnNewGrid = document.querySelector("#new-grid");
+const btnNewGrid = document.querySelector("#btn-newgrid");
 btnNewGrid.addEventListener("click", newGrid);
