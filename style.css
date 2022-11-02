@@ -1,0 +1,33 @@
+body {
+    height: 100vh;
+    margin: 0px;
+}
+
+#grid-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.column {
+    flex: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    background-color: transparent;
+}
+
+.square {
+    flex: auto;
+
+    background-color: rgb(0, 0, 0);
+}
+
+.square:hover {
+    background-color: rgb(246, 203, 250);
+}
