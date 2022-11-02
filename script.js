@@ -1,5 +1,17 @@
 const gridContainer = document.querySelector("#grid-container");
 
+
+function newGrid() {
+    let size = parseInt(prompt("Enter size of new grid. Value must be between 2-100"));
+    
+    if (isNaN(size) || size < 2 || size > 100) {
+        newGrid();
+    } else {
+        removeGrid();
+        generateGrid(size);
+    }
+}
+
 function generateGrid(gridSize) {
     /* Columns */
     for (i = 0; i < gridSize; i++) {
@@ -16,4 +28,12 @@ function generateGrid(gridSize) {
     }
 }
 
-generateGrid(16);
+function removeGrid() {
+    while (gridContainer.firstChild) {
+        gridContainer.removeChild(gridContainer.firstChild);
+    }
+}
+
+
+const btnNewGrid = document.querySelector("#new-grid");
+btnNewGrid.addEventListener("click", newGrid);
