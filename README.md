@@ -1,2 +1,2 @@
 # Etch-A-Sketch
-class
+Browser version of something between a sketchpad and an etch a sketch
