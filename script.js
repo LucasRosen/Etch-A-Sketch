@@ -26,11 +26,23 @@ function generateGrid(gridSize) {
             column.appendChild(square);
         }
     }
+
+    addSquareClickEvent();
 }
 
 function removeGrid() {
     while (gridContainer.firstChild) {
         gridContainer.removeChild(gridContainer.firstChild);
+    }
+}
+
+function addSquareClickEvent() {
+    const squares = document.querySelectorAll(".square");
+    console.log(squares);
+    for (const square of squares) {
+        square.addEventListener("click", () => {
+            console.log("yo");
+        });
     }
 }
 
