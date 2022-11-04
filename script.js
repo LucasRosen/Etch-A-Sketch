@@ -1,4 +1,5 @@
-var curColor = "#ffffff";
+let curColor = "#ffffff";
+let isDrawing = false;
 const gridContainer = document.querySelector("#grid-container");
 
 
@@ -28,7 +29,7 @@ function generateGrid(gridSize) {
         }
     }
 
-    addSquareClickEvent();
+    addSquareMouseEvents();
 }
 
 function removeGrid() {
@@ -37,11 +38,21 @@ function removeGrid() {
     }
 }
 
-function addSquareClickEvent() {
+function addSquareMouseEvents() {
     const squares = document.querySelectorAll(".square");
     for (const square of squares) {
-        square.addEventListener("click", () => {
-            paint(square);
+        square.addEventListener("mousedown", () => {
+            isDrawing = true;
+        });
+
+        square.addEventListener("mouseup", () => {
+            isDrawing = false;
+        })
+
+        square.addEventListener("mousemove", (e) => {
+            if (isDrawing) {
+                paint(e.target);
+            }
         });
     }
 }
@@ -55,6 +66,10 @@ btnNewGrid.addEventListener("click", newGrid);
 function paint(square) {
     square.style.backgroundColor = curColor;
 }
+
+gridContainer.addEventListener("mouseleave", () => {
+    isDrawing = false;
+});
 
 const colorBtns = document.querySelectorAll(".color");
 for (btn of colorBtns) {
