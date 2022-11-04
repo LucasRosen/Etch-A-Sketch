@@ -1,3 +1,4 @@
+var curColor = "#ffffff";
 const gridContainer = document.querySelector("#grid-container");
 
 
@@ -38,10 +39,9 @@ function removeGrid() {
 
 function addSquareClickEvent() {
     const squares = document.querySelectorAll(".square");
-    console.log(squares);
     for (const square of squares) {
         square.addEventListener("click", () => {
-            console.log("yo");
+            paint(square);
         });
     }
 }
@@ -49,3 +49,20 @@ function addSquareClickEvent() {
 
 const btnNewGrid = document.querySelector("#btn-newgrid");
 btnNewGrid.addEventListener("click", newGrid);
+
+
+// Color
+function paint(square) {
+    square.style.backgroundColor = curColor;
+}
+
+const colorBtns = document.querySelectorAll(".color");
+for (btn of colorBtns) {
+    btn.addEventListener("input", (e) => {
+        curColor = e.target.value;
+    });
+
+    btn.addEventListener("click", (e) => {
+        curColor = e.target.value;
+    });
+}
