@@ -71,7 +71,7 @@ gridContainer.addEventListener("mouseleave", () => {
     isDrawing = false;
 });
 
-const colorBtns = document.querySelectorAll(".color");
+const colorBtns = document.querySelectorAll("input[type=color]");
 for (btn of colorBtns) {
     btn.addEventListener("input", (e) => {
         curColor = e.target.value;
