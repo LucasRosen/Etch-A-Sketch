@@ -62,7 +62,7 @@ body {
     margin-top: 1%;
 }
 
-.color {
+input[type=color] {
     border: none;
     background-color: transparent;
     
@@ -71,7 +71,7 @@ body {
     aspect-ratio: 1 / 1 ;
 }
 
-.color::-webkit-color-swatch {
+input[type=color]::-webkit-color-swatch {
     border-radius: 50%;
     border: 2px solid rgb(0, 0, 0);
 }
