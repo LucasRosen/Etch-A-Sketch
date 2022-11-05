@@ -1,4 +1,4 @@
-let curColor = "#ffffff";
+let curColor = "#000000";
 let isDrawing = false;
 const gridContainer = document.querySelector("#grid-container");
 
@@ -41,8 +41,9 @@ function removeGrid() {
 function addSquareMouseEvents() {
     const squares = document.querySelectorAll(".square");
     for (const square of squares) {
-        square.addEventListener("mousedown", () => {
+        square.addEventListener("mousedown", (e) => {
             isDrawing = true;
+            paint(e.target);
         });
 
         square.addEventListener("mouseup", () => {
