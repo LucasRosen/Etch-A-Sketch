@@ -76,9 +76,24 @@ const colorBtns = document.querySelectorAll("input[type=color]");
 for (btn of colorBtns) {
     btn.addEventListener("input", (e) => {
         curColor = e.target.value;
+        curColorDisplay.style.backgroundColor = curColor;
     });
 
     btn.addEventListener("click", (e) => {
         curColor = e.target.value;
+        curColorDisplay.style.backgroundColor = curColor;
     });
 }
+
+
+const curColorDisplay = document.createElement("div");
+curColorDisplay.classList.add("curColorDisplay");
+curColorDisplay.style.cssText = `
+width: 4%; 
+aspect-ratio: 10 / 10;
+background-color: ${curColor}; 
+border: 2px solid black; 
+border-radius: 50%; 
+padding: px;`;
+
+document.body.appendChild(curColorDisplay);

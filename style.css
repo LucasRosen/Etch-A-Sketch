@@ -17,6 +17,7 @@ body {
     height: 65%;
     min-width: none;
     aspect-ratio: 1 / 1 ;
+    padding: 2px;
 
     border: 5px solid black;
 }
