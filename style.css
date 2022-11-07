@@ -51,7 +51,9 @@ body {
 }
 
 .square:hover {
-    border-inline: 1px solid black;
+    -webkit-box-shadow:inset 0px 0px 0px 1px #f00;
+    -moz-box-shadow:inset 0px 0px 0px 1px #f00;
+    box-shadow:inset 0px 0px 0px 1px #f00;
 }
 
 #color-container {
